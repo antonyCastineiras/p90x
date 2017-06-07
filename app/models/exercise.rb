@@ -2,7 +2,7 @@ class Exercise < ApplicationRecord
 	belongs_to :workout
 
 	def self.balance_lunges
-		{name: 'balance_lunges'}
+		{name: 'balance_lunges', single: true}
 	end
 
 	def self.calf_raise_squats
