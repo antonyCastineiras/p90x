@@ -1,0 +1,14 @@
+<% @exercises.each do |exercise| %>
+	<%= form_for exercise, url: exercise_path, method: :patch do |f| %>
+		<h4><%= exercise.name.humanize %></h4>
+		<% if exercise.is_single? %>
+			<%= f.number_field :right_reps, size: 3, placeholder: 'right arm' %> reps
+			<%= f.number_field :left_reps, size: 3, placeholder: 'left arm' %> reps
+		<% elsif exercise.is_timed? %>
+			<%= f.number_field :duration_completed, placeholder: 'duration completed' %> secs
+		<% else %>
+			<%= f.number_field :reps, placeholder: 'total reps' %> reps
+		<% end %>
+		<%= f.submit "Save", class: 'btn btn-primary' %>
+	<% end %>
+<% end %>

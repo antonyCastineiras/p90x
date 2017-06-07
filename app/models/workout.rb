@@ -5,6 +5,8 @@ class Workout < ApplicationRecord
 	validates :name, presence: true
 	after_save :create_exercises
 
+	WORKOUT_NAMES = [:legs_and_back]
+
 	def create_exercises
 		exercise_names = get_exercise_names
 		exercise_names.each  {|exercise_name|
