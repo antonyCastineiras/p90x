@@ -1,14 +1,12 @@
-<% @exercises.each do |exercise| %>
-	<%= form_for exercise, url: exercise_path, method: :patch do |f| %>
+<h1><%= @workout.name.humanize %></h1>
+	<% @exercises.each do |exercise| %>
 		<h4><%= exercise.name.humanize %></h4>
 		<% if exercise.is_single? %>
-			<%= f.number_field :right_reps, size: 3, placeholder: 'right arm' %> reps
-			<%= f.number_field :left_reps, size: 3, placeholder: 'left arm' %> reps
+			<p>Left Reps: <%= exercise.results[:left] %></p>
+			<p>Right Reps: <%= exercise.results[:right] %></p>
 		<% elsif exercise.is_timed? %>
-			<%= f.number_field :duration_completed, placeholder: 'duration completed' %> secs
+			<p>Duration Completed: <%= exercise.results %></p>
 		<% else %>
-			<%= f.number_field :reps, placeholder: 'total reps' %> reps
-		<% end %>
-		<%= f.submit "Save", class: 'btn btn-primary' %>
+			<p>Reps: <%= exercise.results %></p>
 	<% end %>
 <% end %>

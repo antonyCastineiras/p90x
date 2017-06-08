@@ -9,6 +9,12 @@ class Exercise < ApplicationRecord
 		Exercise.send(self.name)[:timed]
 	end
 
+	def results
+		return {left: left_reps, right: right_reps} if is_single?
+		return duration_completed if is_timed?
+		return reps
+	end
+
 	def self.balance_lunges
 		{name: 'balance_lunges', single: true}
 	end

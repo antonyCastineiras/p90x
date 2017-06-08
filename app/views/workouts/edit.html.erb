@@ -1,0 +1,35 @@
+<h1><%= @workout.name.humanize %></h1>
+
+<%= form_for @workout, url: workout_path(@workout), method: :patch do |f| %>
+	<%= f.fields_for :exercises do |exercise_form| %>
+		
+			<h4><%= exercise_form.object.name.humanize %></h4>
+			<% if exercise_form.object.is_single? %>
+		
+				<div class="input-group">
+					<%= exercise_form.number_field :right_reps, size: 3, placeholder: 'right reps', class: 'form-control' %> 
+					<div class="input-group-addon">reps</div>
+				</div>
+
+				<div class="input-group">
+					<%= exercise_form.number_field :left_reps, size: 3, placeholder: 'left reps', class: 'form-control' %>
+					<div class="input-group-addon">reps</div>
+				</div>
+
+			<% elsif exercise_form.object.is_timed? %>
+
+				<div class="input-group">
+					<%= exercise_form.number_field :duration_completed, placeholder: 'duration completed', class: 'form-control' %> 
+					<div class="input-group-addon">seconds</div>
+				</div>
+			<% else %>
+
+				<div class="input-group">
+					<%= exercise_form.number_field :reps, placeholder: 'total reps', class: 'form-control' %>
+					<div class="input-group-addon">reps</div>
+				</div>
+			<% end %>	
+		
+	<% end %>
+	<%= f.submit "Save Workout", class: 'btn btn-primary' %>
+<% end %>

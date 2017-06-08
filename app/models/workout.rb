@@ -1,6 +1,7 @@
 class Workout < ApplicationRecord
 	belongs_to :user
 	has_many :exercises, dependent: :destroy
+	accepts_nested_attributes_for :exercises
 
 	validates :name, presence: true
 	after_save :create_exercises

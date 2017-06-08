@@ -16,16 +16,30 @@ class WorkoutsController < ApplicationController
 
 	def show
 		@workout = Workout.find(params[:id])
-		@exercises = @workout.exercises.reverse
+		@exercises = @workout.exercises
+	end
+
+	def edit
+		@workout = Workout.find(params[:id])
+	end
+
+	def update
+		@workout = Workout.find(params[:id])
+		@workout.update(workout_params)
+		redirect_to after_update_workout_path(@workout)
 	end
 
 	private 
 
 	def workout_params
-		params.require(:workout).permit(:name)
+		params.require(:workout).permit(:name, exercises_attributes: [:id, :right_reps, :left_reps, :reps, :duration_completed])
 	end
 
 	def after_create_workout_path(workout)
+		edit_workout_path(workout)
+	end
+
+	def after_update_workout_path(workout)
 		workout_path(workout)
 	end
 end
