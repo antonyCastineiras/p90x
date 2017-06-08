@@ -17,11 +17,11 @@ class Exercise < ApplicationRecord
 	end
 
 	def previous_attempt
-		exercise = last_similiar_exercise
+		exercise = last_similar_exercise
 		!exercise.nil? ? exercise.results : "no previous attempt"
 	end
 
-	def last_similiar_exercise
+	def last_similar_exercise
 		user.workouts.order(created_at: :desc).each do |workout|
 			next if workout == self.workout
 			workout.exercises.each do |exercise|
@@ -109,5 +109,93 @@ class Exercise < ApplicationRecord
 
 	def self.eighty_twenty_speed_squats
 		{name: 'eighty_twenty_speed_squats', single: true}
+	end
+
+	def self.lawnmowers
+		{name: 'lawnmowers'}
+	end
+
+	def self.twenty_ones
+		{name: 'twenty_ones'}
+	end
+
+	def self.one_arm_cross_body_curls
+		{name: 'one_arm-cross_body_curls', single: true}
+	end
+
+	def self.elbows_out_lawnmowers
+		{name: 'eighty_twenty_speed_squats'}
+	end
+
+	def self.standing_bicep_curls
+		{name: 'standing_bicep_curls'}
+	end
+
+	def self.one_arm_contraction_curls
+		{name: 'eighty_twenty_speed_squats', single: true}
+	end
+
+	def self.corn_cob_pull_ups
+		{name: 'corn_cob_pull_ups'}
+	end
+
+	def self.reverse_grip_bent_over_rows
+		{name: 'reverse_grip_bent_over_rows'}
+	end
+
+	def self.open_arm_curls
+		{name: 'open_arm_curls'}
+	end
+
+	def self.static_arm_curls
+		{name: 'static_arm_curls'}
+	end
+
+	def self.towel_pull_ups
+		{name: 'towel_pull_ups'}
+	end
+
+	def self.congdon_locomotives
+		{name: 'congdon_locomotives'}
+	end
+
+	def self.crouching_cohen_curls
+		{name: 'crouching_cohen_curls'}
+	end
+
+	def self.one_arm_corkscrew_curls
+		{name: 'one_arm_corkscrew_curls', single: true}
+	end
+
+	def self.chin_ups
+		{name: 'chin_ups'}
+	end
+
+	def self.seated_bent_over_back_flys
+		{name: 'seated_bent_over_back_flys'}
+	end
+
+	def self.curl_up_hammer_downs
+		{name: 'curl_up_hammer_downs'}
+	end
+
+	def self.hammer_curls
+		{name: 'hammer_curls'}
+	end
+
+	def self.max_rep_pull_ups
+		{name: 'max_rep_pull_ups'}
+	end
+
+	def self.superman
+		{name: 'superman'}
+	end
+
+	def self.in_out_hammer_curls
+		{name: 'in_out_hammer_curls'}
+	end
+
+	def self.strip_set_curls
+		{name: 'strip_set_curls'}
 	end
 end
