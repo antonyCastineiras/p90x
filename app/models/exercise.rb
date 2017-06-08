@@ -1,5 +1,6 @@
 class Exercise < ApplicationRecord
 	belongs_to :workout
+	has_one :user, through: :workout
 
 	def is_single?
 		Exercise.send(self.name)[:single]
@@ -13,6 +14,21 @@ class Exercise < ApplicationRecord
 		return {left: left_reps, right: right_reps} if is_single?
 		return duration_completed if is_timed?
 		return reps
+	end
+
+	def previous_attempt
+		exercise = last_similiar_exercise
+		!exercise.nil? ? exercise.results : "no previous attempt"
+	end
+
+	def last_similiar_exercise
+		user.workouts.order(created_at: :desc).each do |workout|
+			next if workout == self.workout
+			workout.exercises.each do |exercise|
+				return exercise if exercise.name == self.name
+			end
+		end 
+		nil
 	end
 
 	def self.balance_lunges

@@ -4,6 +4,11 @@
 	<%= f.fields_for :exercises do |exercise_form| %>
 		
 			<h4><%= exercise_form.object.name.humanize %></h4>
+			<% if exercise_form.object.previous_attempt.is_a?(Hash) %>
+				<p>Previous Attempt: Right: <%= exercise_form.object.previous_attempt[:right] %> Left:: <%= exercise_form.object.previous_attempt[:left] %></p>
+			<% else %>
+				<p>Previous Attempt: <%= exercise_form.object.previous_attempt %></p>
+			<% end %>
 			<% if exercise_form.object.is_single? %>
 		
 				<div class="input-group">
