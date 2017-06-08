@@ -1,7 +1,7 @@
 <%= form_for @workout do |f| %>
 	<h2>Select your Workout</h2>
 	<div class="form-group">
-		<%= select :workout, :name, Workout::WORKOUT_NAMES, class: 'form-control' %>
+		<%= select :workout, :name, Workout::WORKOUT_NAMES.collect {|name| name.to_s.humanize }, class: 'form-control' %>
 	</div>
 
 	<%= f.submit "Begin Workout", class: 'btn btn-primary' %>

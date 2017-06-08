@@ -6,6 +6,7 @@ class WorkoutsController < ApplicationController
 	def create
 		workout = Workout.new(workout_params)
 		workout.user = current_user
+		workout.name = lowercase_and_underscore(workout.name)
 		if workout.save
 			redirect_to after_create_workout_path(workout)
 		else 
