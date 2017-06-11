@@ -9,6 +9,14 @@
 			<% else %>
 				<p>Previous Attempt: <%= exercise_form.object.previous_attempt %></p>
 			<% end %>
+
+			<% if exercise_form.object.is_weighted? %>
+				<div class="input-group">
+					<%= exercise_form.number_field :weight, placeholder: 'Weight',  class: 'form-control' %>
+					<div class="input-group-addon">Kgs</div>
+				</div>
+			<% end %>
+
 			<% if exercise_form.object.is_single? %>
 		
 				<div class="input-group">

@@ -10,6 +10,10 @@ class Exercise < ApplicationRecord
 		Exercise.send(self.name)[:timed]
 	end
 
+	def is_weighted?
+		Exercise.send(self.name)[:weighted]
+	end
+
 	def results
 		return {left: left_reps, right: right_reps} if is_single?
 		return duration_completed if is_timed?
@@ -36,7 +40,7 @@ class Exercise < ApplicationRecord
 	end
 
 	def self.calf_raise_squats
-		{name: 'calf_raise_squats'}
+		{name: 'calf_raise_squats', weighted: true}
 	end
 
 	def self.reverse_grip_pull_ups
@@ -72,7 +76,7 @@ class Exercise < ApplicationRecord
 	end
 
 	def self.dead_lift_squats
-		{name: 'dead_lift_squats', single: true}
+		{name: 'dead_lift_squats', single: true, weighted: true}
 	end
 
 	def self.switch_grip_pull_ups
@@ -112,27 +116,27 @@ class Exercise < ApplicationRecord
 	end
 
 	def self.lawnmowers
-		{name: 'lawnmowers'}
+		{name: 'lawnmowers', weighted: true}
 	end
 
 	def self.twenty_ones
-		{name: 'twenty_ones'}
+		{name: 'twenty_ones', weighted: true}
 	end
 
 	def self.one_arm_cross_body_curls
-		{name: 'one_arm-cross_body_curls', single: true}
+		{name: 'one_arm-cross_body_curls', single: true, weighted: true}
 	end
 
 	def self.elbows_out_lawnmowers
-		{name: 'eighty_twenty_speed_squats'}
+		{name: 'eighty_twenty_speed_squats', weighted: true}
 	end
 
 	def self.standing_bicep_curls
-		{name: 'standing_bicep_curls'}
+		{name: 'standing_bicep_curls', weighted: true}
 	end
 
 	def self.one_arm_contraction_curls
-		{name: 'eighty_twenty_speed_squats', single: true}
+		{name: 'eighty_twenty_speed_squats', single: true, weighted: true}
 	end
 
 	def self.corn_cob_pull_ups
@@ -140,15 +144,15 @@ class Exercise < ApplicationRecord
 	end
 
 	def self.reverse_grip_bent_over_rows
-		{name: 'reverse_grip_bent_over_rows'}
+		{name: 'reverse_grip_bent_over_rows', weighted: true}
 	end
 
 	def self.open_arm_curls
-		{name: 'open_arm_curls'}
+		{name: 'open_arm_curls', weighted: true}
 	end
 
 	def self.static_arm_curls
-		{name: 'static_arm_curls'}
+		{name: 'static_arm_curls', weighted: true}
 	end
 
 	def self.towel_pull_ups
@@ -156,15 +160,15 @@ class Exercise < ApplicationRecord
 	end
 
 	def self.congdon_locomotives
-		{name: 'congdon_locomotives'}
+		{name: 'congdon_locomotives', weighted: true}
 	end
 
 	def self.crouching_cohen_curls
-		{name: 'crouching_cohen_curls'}
+		{name: 'crouching_cohen_curls', weighted: true}
 	end
 
 	def self.one_arm_corkscrew_curls
-		{name: 'one_arm_corkscrew_curls', single: true}
+		{name: 'one_arm_corkscrew_curls', single: true, weighted: true}
 	end
 
 	def self.chin_ups
@@ -172,15 +176,15 @@ class Exercise < ApplicationRecord
 	end
 
 	def self.seated_bent_over_back_flys
-		{name: 'seated_bent_over_back_flys'}
+		{name: 'seated_bent_over_back_flys', weighted: true}
 	end
 
 	def self.curl_up_hammer_downs
-		{name: 'curl_up_hammer_downs'}
+		{name: 'curl_up_hammer_downs', weighted: true}
 	end
 
 	def self.hammer_curls
-		{name: 'hammer_curls'}
+		{name: 'hammer_curls', weighted: true}
 	end
 
 	def self.max_rep_pull_ups
@@ -192,10 +196,10 @@ class Exercise < ApplicationRecord
 	end
 
 	def self.in_out_hammer_curls
-		{name: 'in_out_hammer_curls'}
+		{name: 'in_out_hammer_curls', weighted: true}
 	end
 
 	def self.strip_set_curls
-		{name: 'strip_set_curls'}
+		{name: 'strip_set_curls', weighted: true}
 	end
 end
