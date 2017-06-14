@@ -33,7 +33,7 @@ class WorkoutsController < ApplicationController
 	private 
 
 	def workout_params
-		params.require(:workout).permit(:name, exercises_attributes: [:id, :right_reps, :left_reps, :reps, :duration_completed, :weight])
+		params.require(:workout).permit(:name, exercises_attributes: [:id, :right_reps, :left_reps, :reps, :duration_completed, :weight, :correct_weight])
 	end
 
 	def after_create_workout_path(workout)

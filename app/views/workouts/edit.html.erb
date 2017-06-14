@@ -12,9 +12,13 @@
 
 			<% if exercise_form.object.is_weighted? %>
 				<div class="input-group">
-					<%= exercise_form.number_field :weight, placeholder: 'Weight',  class: 'form-control' %>
+					<%= exercise_form.number_field :weight, placeholder: "Weight",  class: 'form-control' %>
 					<div class="input-group-addon">Kgs</div>
 				</div>
+				<%= exercise_form.radio_button :correct_weight, :less %>
+				<%= exercise_form.label(:correct_weight, "Less weight next time") %>
+				<%= exercise_form.radio_button :correct_weight, :more %>
+				<%= exercise_form.label(:correct_weight, "More weight next time") %>
 			<% end %>
 
 			<% if exercise_form.object.is_single? %>
