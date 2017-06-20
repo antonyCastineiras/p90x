@@ -202,4 +202,56 @@ class Exercise < ApplicationRecord
 	def self.strip_set_curls
 		{name: 'strip_set_curls', weighted: true}
 	end
+
+	def self.alternating_shoulder_press
+		{name: 'alternating_shoulder_press', weighted: true}
+	end
+
+	def self.in_and_out_bicep_curls
+		{name: 'in_and_out_bicep_curls', weighted: true}
+	end
+
+	def self.two_arm_triceps_kickback
+		{name: "two_arm_triceps_kickback", weighted: true}
+	end
+
+	def self.deep_swimmer_presses
+		{name: "deep_swimmer_presses", weighted: true}
+	end
+
+	def self.full_supination_concentration_curls
+		{name: "full_supination_concentration_curls", weighted: true}
+	end
+
+	def self.chair_dips
+		{name: "chair_dips"}
+	end
+
+	def self.upright_rows
+		{name: "upright_rows", weighted: true}
+	end
+
+	def self.flip_grip_twist_triceps_kickbacks
+		{name: "flip_grip_twist_triceps_kickbacks", weighted: true}
+	end
+
+	def self.seated_two_angle_shoulder_flys
+		{name: "seated_two_angle_shoulder_flys", weighted: true}
+	end
+
+	def self.lying_down_triceps_extensions
+		{name: "lying_down_triceps_extensions", weighted: true}
+	end
+
+	def self.in_and_out_straight_arm_shoulder_flys
+		{name: "in_and_out_straight_arm_shoulder_flys", weighted: true}
+	end
+
+	def self.congdon_curls
+		{name: "congdon_curls", weighted: true}
+	end
+
+	def self.side_tri_rises
+		{name: "side_tri_rises"}
+	end
 end
