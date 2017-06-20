@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  resource :user do
+  	resources :workouts
+  end	
+
   resources :workouts
   resources :exercises, only: [:update]
 

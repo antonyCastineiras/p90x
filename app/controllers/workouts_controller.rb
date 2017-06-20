@@ -1,4 +1,9 @@
 class WorkoutsController < ApplicationController
+	def index
+		@user = current_user
+		@workouts = @user.workouts
+	end
+
 	def new
 		@workout = Workout.new(name: "legs_and_back")
 	end
@@ -13,6 +18,12 @@ class WorkoutsController < ApplicationController
 			flash[:error] = "Unable to create workout"
 			redirect_to :back
 		end
+	end
+
+	def destroy
+		@workout = Workout.find(params[:id])
+		@workout.delete if @workout.user == current_user
+		redirect_to after_destroy_workout_path
 	end
 
 	def show
@@ -42,5 +53,9 @@ class WorkoutsController < ApplicationController
 
 	def after_update_workout_path(workout)
 		workout_path(workout)
+	end
+
+	def after_destroy_workout_path
+		:back
 	end
 end

@@ -1,0 +1,8 @@
+<ul class="list-group"></ul>
+<% @workouts.each do |workout| %>
+	<li class="list-group-item">
+		<p><%= link_to "#{workout.name.humanize}", workout_path(workout) %></p>
+		<p><%= workout.created_at.strftime("%d/%m/%y") %></p>
+		<%= link_to "Delete", user_workout_path(workout), method: :delete %>
+	</li>
+<% end %>
