@@ -19,6 +19,8 @@
 				<%= exercise_form.label(:correct_weight, "Less weight next time") %>
 				<%= exercise_form.radio_button :correct_weight, :more %>
 				<%= exercise_form.label(:correct_weight, "More weight next time") %>
+				<%= exercise_form.radio_button :correct_weight, :same %>
+				<%= exercise_form.label(:correct_weight, "Same weight next time") %>
 			<% end %>
 
 			<% if exercise_form.object.is_single? %>

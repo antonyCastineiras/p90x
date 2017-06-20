@@ -1,6 +1,6 @@
 class WorkoutsController < ApplicationController
 	def new
-		@workout = Workout.new
+		@workout = Workout.new(name: "legs_and_back")
 	end
 
 	def create
