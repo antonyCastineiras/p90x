@@ -10,18 +10,6 @@
 				<p>Previous Attempt: <%= exercise_form.object.previous_attempt %></p>
 			<% end %>
 
-			<% if exercise_form.object.is_weighted? %>
-				<div class="input-group">
-					<%= exercise_form.number_field :weight, placeholder: "Weight",  class: 'form-control' %>
-					<div class="input-group-addon">Kgs</div>
-				</div>
-				<%= exercise_form.radio_button :correct_weight, :less %>
-				<%= exercise_form.label(:correct_weight, "Less weight next time") %>
-				<%= exercise_form.radio_button :correct_weight, :more %>
-				<%= exercise_form.label(:correct_weight, "More weight next time") %>
-				<%= exercise_form.radio_button :correct_weight, :same %>
-				<%= exercise_form.label(:correct_weight, "Same weight next time") %>
-			<% end %>
 
 			<% if exercise_form.object.is_single? %>
 		
@@ -48,6 +36,19 @@
 					<div class="input-group-addon">reps</div>
 				</div>
 			<% end %>	
+			
+			<% if exercise_form.object.is_weighted? %>
+				<div class="input-group">
+					<%= exercise_form.number_field :weight, placeholder: "Weight",  class: 'form-control' %>
+					<div class="input-group-addon">Kgs</div>
+				</div>
+				<%= exercise_form.radio_button :correct_weight, :less %>
+				<%= exercise_form.label(:correct_weight, "Less weight next time") %>
+				<%= exercise_form.radio_button :correct_weight, :more %>
+				<%= exercise_form.label(:correct_weight, "More weight next time") %>
+				<%= exercise_form.radio_button :correct_weight, :same %>
+				<%= exercise_form.label(:correct_weight, "Same weight next time") %>
+			<% end %>
 		
 	<% end %>
 	<%= f.submit "Save Workout", class: 'btn btn-primary' %>
