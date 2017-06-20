@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  weight: 1
-  correct_weight: false
-  left_reps: 1
-  right_reps: 1
-  reps: 1
-  duration_completed: 1
-  notes: MyText
-  workout: 
+# one:
+#   name: 'legs and back'
+#   weight: 10
+#   correct_weight: false
+#   left_reps: 10
+#   right_reps: 10
+#   reps: 10
+#   duration_completed: 10
+#   notes: 'Here are some notes'
+#   workout: 
 
-two:
-  name: MyString
-  weight: 1
-  correct_weight: false
-  left_reps: 1
-  right_reps: 1
-  reps: 1
-  duration_completed: 1
-  notes: MyText
-  workout: 
+# two:
+#   name: MyString
+#   weight: 1
+#   correct_weight: false
+#   left_reps: 1
+#   right_reps: 1
+#   reps: 1
+#   duration_completed: 1
+#   notes: MyText
+#   workout: 
