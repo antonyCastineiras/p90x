@@ -35,6 +35,18 @@ class Exercise < ApplicationRecord
 		nil
 	end
 
+	def recommended_weight
+		last_exercise = last_similar_exercise
+		case last_exercise.correct_weight
+		when "more"
+			return last_exercise.weight + 1
+		when "less"
+			return last_exercise.weight - 1
+		else
+			return last_exercise.weight
+		end
+	end
+
 	def self.balance_lunges
 		{name: 'balance_lunges', single: true}
 	end
