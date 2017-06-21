@@ -14,40 +14,40 @@
 			<% if exercise_form.object.is_single? %>
 		
 				<div class="input-group">
-					<%= exercise_form.number_field :right_reps, size: 3, placeholder: 'right reps', class: 'form-control' %> 
+					<%= exercise_form.number_field :right_reps, size: 3, required: true, placeholder: 'right reps', class: 'form-control' %> 
 					<div class="input-group-addon">reps</div>
 				</div>
 
 				<div class="input-group">
-					<%= exercise_form.number_field :left_reps, size: 3, placeholder: 'left reps', class: 'form-control' %>
+					<%= exercise_form.number_field :left_reps, size: 3, required: true, placeholder: 'left reps', class: 'form-control' %>
 					<div class="input-group-addon">reps</div>
 				</div>
 
 			<% elsif exercise_form.object.is_timed? %>
 
 				<div class="input-group">
-					<%= exercise_form.number_field :duration_completed, placeholder: 'duration completed', class: 'form-control' %> 
+					<%= exercise_form.number_field :duration_completed, required: true, placeholder: 'duration completed', class: 'form-control' %> 
 					<div class="input-group-addon">seconds</div>
 				</div>
 			<% else %>
 
 				<div class="input-group">
-					<%= exercise_form.number_field :reps, placeholder: 'total reps', class: 'form-control' %>
+					<%= exercise_form.number_field :reps, required: true, placeholder: 'total reps', class: 'form-control' %>
 					<div class="input-group-addon">reps</div>
 				</div>
 			<% end %>	
 			
 			<% if exercise_form.object.is_weighted? %>
 				<div class="input-group">
-					<%= exercise_form.number_field :weight, placeholder: "Weight",  class: 'form-control' %>
+					<%= exercise_form.number_field :weight, required: true, placeholder: "Weight",  class: 'form-control' %>
 					<div class="input-group-addon">Kgs</div>
 				</div>
-				<%= exercise_form.radio_button :correct_weight, :less %>
-				<%= exercise_form.label(:correct_weight, "Less weight next time") %>
 				<%= exercise_form.radio_button :correct_weight, :more %>
 				<%= exercise_form.label(:correct_weight, "More weight next time") %>
-				<%= exercise_form.radio_button :correct_weight, :same %>
+				<%= exercise_form.radio_button :correct_weight, :same, checked: true %>
 				<%= exercise_form.label(:correct_weight, "Same weight next time") %>
+				<%= exercise_form.radio_button :correct_weight, :less %>
+				<%= exercise_form.label(:correct_weight, "Less weight next time") %>
 			<% end %>
 		
 	<% end %>
