@@ -1,8 +1,9 @@
 <h1><%= @workout.name.humanize %></h1>
 
 <%= form_for @workout, url: workout_path(@workout), method: :patch do |f| %>
+	<div class="row">
 	<%= f.fields_for :exercises do |exercise_form| %>
-		
+		<div class="col-xs-12 col-md-6 col-lg-4">	
 			<h4><%= exercise_form.object.name.humanize %></h4>
 			<% if exercise_form.object.last_similar_exercise && exercise_form.object.previous_attempt.is_a?(Hash) %>
 				<p>Previous Attempt: Right: <%= exercise_form.object.previous_attempt[:right] %> Left:: <%= exercise_form.object.previous_attempt[:left] %></p>
@@ -53,7 +54,8 @@
 				<%= exercise_form.radio_button :correct_weight, :less %>
 				<%= exercise_form.label(:correct_weight, "Less weight next time") %>
 			<% end %>
-		
+		</div>
 	<% end %>
+	</div>
 	<%= f.submit "Save Workout", class: 'btn btn-primary' %>
 <% end %>

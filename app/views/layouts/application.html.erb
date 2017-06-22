@@ -3,26 +3,26 @@
   <head>
     <title>P90x</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-		<% if current_user %>
-			<ul class="nav nav-pills">
-				<li role="presentation">
-          <%=link_to "Sign Out", destroy_user_session_path, method: :delete %>  
-        </li>
-				<li role="presentation">
+		<div class="container">
+    <% if current_user %>
+      <ul class="nav nav-pills">
+        <li role="presentation">
           <%= link_to "Create Workout", new_workout_path %>
         </li>
         <li role="presentation">
           <%= link_to "View My Workouts", user_workouts_path %>
         </li>
-			</ul>
-		<% end %>
-		<div class="container">
+        <li role="presentation">
+          <%=link_to "Sign Out", destroy_user_session_path, method: :delete %>  
+        </li>
+      </ul>
+    <% end %>
     	<%= yield %>
 		</div>
   </body>

@@ -1,3 +1,81 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ====================
+// HomePage Styles
+// ====================
+
+
+$ice: #99d3df;
+$water: #88bbd6;
+$plaster: #cdcdcd;
+$linen: #e9e9e9;
+
+body {
+	background: $plaster;
+}
+
+body  {
+	color: $linen;
+	font-family: 'Righteous', cursive;
+}
+
+form, h1, h2, h3, h4, h5, h6, p {
+	color: #555;
+}
+
+a {
+	color: $water;
+}
+
+a:hover {
+	color: $ice;
+}
+
+.container {
+	background: $linen;
+}
+
+.jumbotron {
+	background: $water;
+	text-align: center;
+}
+
+.forms-container {
+	display: flex;
+}
+
+.form-container form, .new-workout-form-container  {
+	margin-bottom: 20px;
+}
+
+.forms-container .form-container:nth-child(2) {
+	background: $ice;
+}
+
+.form-control:focus {
+	border-color: $water;
+	box-shadow: 0 1px 1px $ice inset, 0 0 8px $water;
+}
+
+.new-workout-form-container {
+	text-align: center;
+}
+
+ul.nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
