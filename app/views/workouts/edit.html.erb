@@ -4,7 +4,7 @@
 	<div class="row">
 	<%= f.fields_for :exercises do |exercise_form| %>
 		<div class="col-xs-12 col-md-6 col-lg-4">	
-			<h4><%= exercise_form.object.name.humanize %></h4>
+			<h3><%= exercise_form.object.name.humanize %></h>
 			<% if exercise_form.object.last_similar_exercise && exercise_form.object.previous_attempt.is_a?(Hash) %>
 				<p>Previous Attempt: Right: <%= exercise_form.object.previous_attempt[:right] %> Left:: <%= exercise_form.object.previous_attempt[:left] %></p>
 			<% else %>
