@@ -1,24 +1,5 @@
-# README
+#P90x
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app I created to track my personal progress while completing the p90x exercise program. It allows you to log each workout you complete and then and compare your results the next time you repeat a specific workout. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A demo of the app can be found here [p90xtracker.herokuapp.com](https://p90xtracker.herokuapp.com)
