@@ -1,4 +1,4 @@
-#P90x
+# P90x
 
 This is an app I created to track my personal progress while completing the p90x exercise program. It allows you to log each workout you complete and then and compare your results the next time you repeat a specific workout. 
 
